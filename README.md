@@ -119,3 +119,14 @@ Verbose mode:
 ```bash
 pytest -v
 ```
+
+---
+
+## 📊 Visual Previews & Exploit Evidence
+
+### Streamlit Security Scan Dashboard
+![Streamlit Security Scan Dashboard](reports/screenshots/dashboard_preview.png)
+
+### Verified Exploit Evidence (XSS Insecure Output Script Tag Injection)
+![Verified Exploit Evidence](reports/screenshots/xss_evidence.png)
+

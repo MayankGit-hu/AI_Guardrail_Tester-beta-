@@ -407,8 +407,8 @@ def generate_report():
     )
     pdf.ln(5)
 
-    img_top = "/Users/mayankchopra/.gemini/antigravity-ide/brain/5920273c-f7db-4086-b158-8615c3184a54/report_top_fold_1782000454301.png"
-    img_xss = "/Users/mayankchopra/.gemini/antigravity-ide/brain/5920273c-f7db-4086-b158-8615c3184a54/report_tc05_xss_1782000477069.png"
+    img_top = "reports/screenshots/dashboard_preview.png"
+    img_xss = "reports/screenshots/xss_evidence.png"
 
     # Embed Figure 1 (Streamlit GUI Dashboard)
     if os.path.exists(img_top):
