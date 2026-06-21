@@ -395,10 +395,42 @@ def generate_report():
     )
     pdf.multi_cell(170, 4.6, roadmap_text)
 
+    # ---------------- PAGE 4: APPENDIX: EVIDENCE SCREENSHOTS ----------------
+    pdf.add_page()
+    pdf.chapter_title("5. Appendix: Visual Dashboard & Exploit Evidence")
+    
+    pdf.set_font("Helvetica", "", 9)
+    pdf.set_text_color(71, 85, 105)
+    pdf.multi_cell(0, 4.5,
+        "The following screenshots document the visual dashboard analytics interface generated during "
+        "security assessment scanning, alongside verified exploit evidence of raw, unescaped XSS outputs:"
+    )
+    pdf.ln(5)
+
+    img_top = "/Users/mayankchopra/.gemini/antigravity-ide/brain/5920273c-f7db-4086-b158-8615c3184a54/report_top_fold_1782000454301.png"
+    img_xss = "/Users/mayankchopra/.gemini/antigravity-ide/brain/5920273c-f7db-4086-b158-8615c3184a54/report_tc05_xss_1782000477069.png"
+
+    # Embed Figure 1 (Streamlit GUI Dashboard)
+    if os.path.exists(img_top):
+        pdf.image(img_top, x=15, w=180, h=72)
+        pdf.ln(2)
+        pdf.set_font("Helvetica", "I", 8)
+        pdf.set_text_color(148, 163, 184)
+        pdf.cell(0, 5, "Figure 1: Streamlit Security Scan Dashboard - Metric Panels and Model Benchmarks", align="C")
+        pdf.ln(10)
+
+    # Embed Figure 2 (XSS exploit details)
+    if os.path.exists(img_xss):
+        pdf.image(img_xss, x=15, w=180, h=72)
+        pdf.ln(2)
+        pdf.set_font("Helvetica", "I", 8)
+        pdf.set_text_color(148, 163, 184)
+        pdf.cell(0, 5, "Figure 2: Verified Exploit Evidence - Vulnerable Insecure Output Script Tag Leakage", align="C")
+
     # Save PDF
     pdf_output_path = "Local_LLM_Security_Report.pdf"
     pdf.output(pdf_output_path)
-    print(f"✅ Formal Security Report successfully generated at: {pdf_output_path}")
+    print(f"✅ Premium 4-Page Security Report successfully generated at: {pdf_output_path}")
 
 if __name__ == "__main__":
     generate_report()
